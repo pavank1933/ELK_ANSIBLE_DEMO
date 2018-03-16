@@ -19,6 +19,11 @@
 #- name: Import fluentd GPG Key
 #  command: rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
 
+-
+  name: "Import fluentd GPG Key"
+  shell: |-
+      sudo rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
+
 - name: Install fluentd
   yum: name={{ item }} state=present
   become: true
